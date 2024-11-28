@@ -1,6 +1,6 @@
 # **Alternative Assets API**
 
-A Node.js and MongoDB-based API for managing alternative assets, providing endpoints for user authentication, asset management, and detailed valuation histories.
+A Node.js and MongoDB-based API for managing alternative assets, providing endpoints for user authentication, asset management, and wealth worth.
 
 ---
 
@@ -9,8 +9,8 @@ A Node.js and MongoDB-based API for managing alternative assets, providing endpo
 The **Alternative Assets API** is a backend service designed to:
 
 - **Authenticate Users**: Secure user authentication using `JWT` and `httpOnly` cookies.
-- **Manage Assets**: Allow users to manage their alternative assets, including adding, updating, and retrieving details.
-- **Provide Valuation Histories**: Offer detailed valuation histories for assets to track performance over time.
+- **Manage Assets**: Allow users to manage their alternative assets, retrieving details.
+- **Provide wealth worth**: Offer detailed histories for assets to track performance over time.
 
 ---
 
