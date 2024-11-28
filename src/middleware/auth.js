@@ -4,7 +4,12 @@ const authenticate = (req, res, next) => {
     //const token = req.header('Authorization');
     const token = req.cookies?.token;
 
-    if (!token) return res.status(401).json({ message: "No token, authorization denied" });
+    if (!token) {
+        return res.status(401).json({
+            message: "No token, authorization denied",
+            code: "AUTH_NO_TOKEN" // Custom error code for easier identification
+        });
+    }
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
