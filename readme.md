@@ -66,12 +66,9 @@ The **Alternative Assets API** is a backend service designed to:
 4. **Run Docker Compose**:
 
    - install dependencies
-
-   ```bash
-   npm install
-
-   ```
-
+     ```bash
+      npm install
+     ```
    - Build the API and MongoDB services prepending the enviroment to use, in this case development:
 
      ```bash
@@ -100,7 +97,8 @@ The **Alternative Assets API** is a backend service designed to:
 
    - in order to user the app straight forward, preloading data is highly adbisable. after the container is up the following command needs to be run:
 
-     ```docker exec -it api node src/config/preload.js
+     ```bash
+     docker exec -it api node src/config/preload.js
 
      ```
 
