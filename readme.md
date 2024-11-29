@@ -49,7 +49,7 @@ The **Alternative Assets API** is a backend service designed to:
 
 3. **Set Up Environment Variables**:
 
-   - [Note] .env files should not commit and push to a public or shared repository, in this an exception was made to seed up the set up proccess.
+   - [Note] .env files should not commit and push to a public or shared repository, in this an exception was made to speed up the set up proccess.
 
    - Create a `.env.development` file in the root directory:
      ```
