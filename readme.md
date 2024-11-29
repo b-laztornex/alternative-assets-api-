@@ -65,9 +65,10 @@ The **Alternative Assets API** is a backend service designed to:
 
 4. **Run Docker Compose**:
 
-   - intall dependencies
+   - install dependencies
 
-   ```npm install
+   ```bash
+   npm install
 
    ```
 
@@ -85,13 +86,14 @@ The **Alternative Assets API** is a backend service designed to:
 
    - Run docker-compose config to validate if the .env file variable are being resolved correctly.:
 
-     ```docker-compose config
+     ```bash
+         docker-compose config
 
-        NODE_ENV: development
-        networks:
-          default: null
-        ports:
-          - mode: ingress
+         NODE_ENV: development
+         networks:
+           default: null
+         ports:
+           - mode: ingress
      ```
 
 5. **Preload Data**:
