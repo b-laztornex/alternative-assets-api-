@@ -33,42 +33,6 @@ The **Alternative Assets API** is a backend service designed to:
 
 ## **How Users Can Get Started with the Project**
 
-### **Run Locally**
-
-1. **Clone the Repository**:
-
-   ```bash
-   git clone https://github.com/your-username/alternative-assets-api.git
-   cd alternative-assets-api
-   ```
-
-2. **Install Dependencies**:
-
-   ```bash
-   npm install
-   ```
-
-3. **Set Up Environment Variables**:
-
-   - Create a `.env` file in the root directory:
-     ```env
-     PORT=5001
-     MONGO_URI=mongodb://localhost:27017/alternative-assets
-     JWT_SECRET=your_jwt_secret
-     ```
-   - Replace `your_jwt_secret` with a secure secret key.
-
-4. **Start the Server**:
-
-   ```bash
-   npm start
-   ```
-
-5. **Access API Documentation**:
-   - Swagger documentation is available at `http://localhost:5001/api-docs`.
-
----
-
 ### **Run with Docker Compose**
 
 1. **Install Docker and Docker Compose**:
@@ -79,17 +43,24 @@ The **Alternative Assets API** is a backend service designed to:
 2. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/b-laztornex/alternative-assets-api.git
-   cd alternative-assets-api
+   git clone https://github.com/b-laztornex/alternative-assets-api-
+   cd alternative-assets-api-
    ```
 
 3. **Set Up Environment Variables**:
 
+   - [Note] .env files should not commit and push to a public or shared repository, in this an exception was made to seed up the set up proccess.
+
    - Create a `.env.development` file in the root directory:
-     ```env
-     PORT=5001
-     MONGO_URI=mongodb://mongo:27017/alternative-assets
-     JWT_SECRET=your_jwt_secret
+     ```
+     MONGO_URI=mongodb://root:root4312@mongo:27017/alternative-assets?authSource=admin
+     JWT_SECRET=supersecretkey
+     GENERATE_SWAGGER=false
+     NODE_ENV=development
+     APP_HOST=localhost
+     APP_PORT=5001
+     APP_URL=http://localhost:5001
+     BASE_PATH=/api
      ```
 
 4. **Run Docker Compose**:
@@ -100,15 +71,27 @@ The **Alternative Assets API** is a backend service designed to:
 
    ```
 
-   - Build the API and MongoDB services:
+   - Build the API and MongoDB services prepending the enviroment to use, in this case development:
 
      ```bash
-     docker-compose build
+      NODE_ENV=development docker-compose build
      ```
 
    - Start the API and MongoDB services:
+
      ```bash
      docker-compose up
+     ```
+
+   - Run docker-compose config to validate if the .env file variable are being resolved correctly.:
+
+     ```docker-compose config
+
+        NODE_ENV: development
+        networks:
+          default: null
+        ports:
+          - mode: ingress
      ```
 
 5. **Preload Data**:
