@@ -207,11 +207,12 @@ const preloadData = async () => {
             } 
         ];
 
-        // Insert new users into the database
-        const createdUsers = await User.insertMany(users);
-        createdUsers.forEach((user) => {
-            console.log(`User ${user.username} created.`);
-        });
+    
+
+        for (const user of users) {
+            const newUser = new User(user);
+            await newUser.save(); // This will trigger the pre-save hook
+        }
 
         console.log("Preloading complete!");
     } catch (err) {
